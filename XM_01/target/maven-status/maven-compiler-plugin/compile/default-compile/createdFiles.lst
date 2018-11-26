@@ -1,0 +1,3 @@
+com\demo\jedis\JedisClient.class
+com\demo\jedis\JedisClientPool.class
+com\demo\jedis\JsonUtils.class
