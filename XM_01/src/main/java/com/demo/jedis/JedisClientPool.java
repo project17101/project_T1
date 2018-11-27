@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
@@ -14,8 +15,6 @@ public class JedisClientPool implements JedisClient {
 	@Autowired
 	private JedisPool jedisPool;
 	
-	
-	
 	public JedisPool getJedisPool() {
 		return jedisPool;
 	}
@@ -24,7 +23,6 @@ public class JedisClientPool implements JedisClient {
 		this.jedisPool = jedisPool;
 	}
 
-	@Override
 	public String set(String key, String value) {
 		Jedis jedis = jedisPool.getResource();
 		String result = jedis.set(key, value);
@@ -32,7 +30,7 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
+	
 	public String get(String key) {
 		Jedis jedis = jedisPool.getResource();
 		String result = jedis.get(key);
@@ -40,7 +38,7 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
+	
 	public Boolean exists(String key) {
 		Jedis jedis = jedisPool.getResource();
 		Boolean result = jedis.exists(key);
@@ -48,7 +46,6 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
 	public Long expire(String key, int seconds) {
 		Jedis jedis = jedisPool.getResource();
 		Long result = jedis.expire(key, seconds);
@@ -56,7 +53,6 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
 	public Long ttl(String key) {
 		Jedis jedis = jedisPool.getResource();
 		Long result = jedis.ttl(key);
@@ -64,7 +60,6 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
 	public Long incr(String key) {
 		Jedis jedis = jedisPool.getResource();
 		Long result = jedis.incr(key);
@@ -72,7 +67,7 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
+	
 	public Long hset(String key, String field, String value) {
 		Jedis jedis = jedisPool.getResource();
 		Long result = jedis.hset(key, field, value);
@@ -80,7 +75,7 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
+	
 	public String hget(String key, String field) {
 		Jedis jedis = jedisPool.getResource();
 		String result = jedis.hget(key, field);
@@ -88,7 +83,7 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
+	
 	public Long hdel(String key, String... field) {
 		Jedis jedis = jedisPool.getResource();
 		Long result = jedis.hdel(key, field);
@@ -96,7 +91,6 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
 	public Boolean hexists(String key, String field) {
 		Jedis jedis = jedisPool.getResource();
 		Boolean result = jedis.hexists(key, field);
@@ -104,7 +98,7 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
+	
 	public List<String> hvals(String key) {
 		Jedis jedis = jedisPool.getResource();
 		List<String> result = jedis.hvals(key);
@@ -112,7 +106,7 @@ public class JedisClientPool implements JedisClient {
 		return result;
 	}
 
-	@Override
+	
 	public Long del(String key) {
 		Jedis jedis = jedisPool.getResource();
 		Long result = jedis.del(key);
