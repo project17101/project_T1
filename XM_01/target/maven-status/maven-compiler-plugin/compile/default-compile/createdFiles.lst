@@ -1,3 +1,13 @@
+com\demo\mapper\Text1.class
 com\demo\until\JsonUtils.class
 com\demo\jedis\JedisClient.class
+com\demo\service\interfaces\FunctionService.class
+com\demo\service\Impl\Text1.class
+com\demo\controller\FunctionController.class
+com\demo\controller\Text1.class
+com\demo\service\interfaces\Text1.class
+com\demo\mapper\FunctionMapper.class
+com\demo\service\Impl\FunctionServiceimpl.class
 com\demo\jedis\JedisClientPool.class
+com\demo\jedis\JsonUtils.class
+com\demo\model\Text1.class
