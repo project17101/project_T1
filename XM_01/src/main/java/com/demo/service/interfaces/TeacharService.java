@@ -7,5 +7,6 @@ public interface TeacharService {
 	
 	
 	public PageInfo<Teachar> findteachar(Teachar teachar);
+	
 
 }
